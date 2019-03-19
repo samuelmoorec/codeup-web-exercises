@@ -5,20 +5,35 @@
     <title>CodeUp</title>
     <style>
         .navbar{
-            background-color: #383c42;
-            border: #383c42;
+            background-color: black; /*Gives black background for navigation bar*/
+            border: black;
             text-decoration-color: aliceblue;
+            text-align: left;
         }
-        .navbar<a>{
-            color: azure;
+        .navbar a{
+            color: lightgray;
+            font-family: Helvetica;
+            text-decoration: none;
         }
+
+        .codehead h1 {
+            font-family: Helvetica;
+        }
+        main a {
+            text-decoration: none;
+        }
+        .extrastuff a {
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
+
     <nav class="navbar">
-        <img src="http://placeholder.pics/svg/30" alt="icon">
-        <table>
+        <table cellspacing="10px">
             <tr>
+                <th><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW8zB4b6OzcMH75gZRfXC0GXJrOw2irzDu4ERDBI9Z8S87I6z1hw" alt="icon" height="40px>" </th>
                 <th><a href="https://github.com/pulls">Pull Requests</a></th>
                 <th><a href="https://github.com/issues">Issues</a></th>
                 <th><a href="https://github.com/marketplace">Marketplace</a></th>
@@ -27,9 +42,12 @@
         </table>
     </nav>
 
-    <hr>
 
-    <header><img src="http://placeholder.pics/svg/30" alt="icon"><h1>Codeup</h1></header>
+    <header class="codehead">
+        <img src="https://pbs.twimg.com/profile_images/1016346444142243842/w9jGpuk0_400x400.jpg" height="70px" alt="icon">
+        <h1>Codeup</h1>
+    </header>
+
 
     <table>
         <tr>
@@ -44,20 +62,19 @@
     <br>
     <hr>
 
-        <h4>Codeup's dev team</h4>
+        <main>
+            <h4>Codeup's dev team</h4>
 
-    <hr>
-
-        <table>
+        <table border="1" cellpadding="20px" frame="border">
             <tr>
                 <td><img src="http://placeholder.pics/svg/48" alt=""></td>
-                <td><a href="">Kent Beck</a><br>Kent Beck</td>
+                <td><a href="">Kent Beck</a><br><small>Kent Beck</small></td>
                 <td>Member</td>
                 <td>1 team</td>
             </tr>
             <tr>
                 <td><img src="http://placeholder.pics/svg/48" alt=""></td>
-                <td><a href="">Codeup Instruction Staff</a><br>CodeUpInstructors</td>
+                <td><a href="">Codeup Instruction Staff</a><br><small>CodeUpInstructors</small></td>
                 <td>Member</td>
                 <td>1 team</td>
             </tr>
@@ -68,24 +85,23 @@
                 <td>0 teams</td>
             </tr>
         </table>
+        </main>
 
-    <hr>
-    <br>
-    <hr>
 
-    <p>©2018 GitHub, Inc.</p>
-    <a href="https://github.com/site/terms">Terms</a>
-    <a href="https://github.com/site/privacy">Privacy</a>
-    <a href="https://github.com/security">Security</a>
-    <a href="https://githubstatus.com/">Status</a>
-    <a href="https://help.github.com/">Help</a>
-    <a href="https://github.com/contact">Contact GitHub</a>
-    <a href="https://developer.github.com/">API</a>
-    <a href="https://training.github.com/">Training</a>
-    <a href="">Shop</a>
-    <a href="https://github.blog/">Blog</a>
-    <a href="https://github.com/about">About</a>
-
+    <footer class="extrastuff">
+            <p>©2018 GitHub, Inc.
+            <a href="https://github.com/site/terms">Terms</a>
+            <a href="https://github.com/site/privacy">Privacy</a>
+            <a href="https://github.com/security">Security</a>
+            <a href="https://githubstatus.com/">Status</a>
+            <a href="https://help.github.com/">Help</a>
+            <a href="https://github.com/contact">Contact GitHub</a>
+            <a href="https://developer.github.com/">API</a>
+            <a href="https://training.github.com/">Training</a>
+            <a href="">Shop</a>
+            <a href="https://github.blog/">Blog</a>
+                <a href="https://github.com/about">About</a></p>
+    </footer>
 
 
 </body>
