@@ -3,14 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
-        <form method="POST" action="">
+        <script>
+            "use strict"
+                if (){
+
+                }
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </script>
     </head>
         <body>
             <h1>Register with Us</h1>
-
+            <form method="POST" action="https://www.elformo.com/forms/414ac550-0cb1-4ee4-a3fe-e00a1ac0dcd3">
             <main>
             <p>Please enter your e-mail.</p>
-                <input type="text" name="email" placeholder="Ex: email@gmail.com">
+                <input type="email" name="email" placeholder="Ex: email@gmail.com">
             <p>Please create a password</p>
                 <input type="text" name="password"  placeholder="Ex: Pass1234">
             <p>Please Re-Enter password</p>
@@ -18,15 +33,26 @@
             <p>Tell us a little about yourself.</p>
                 <textarea name="bio" placeholder="Type bio here..."></textarea>
             <p>How'd you hear about us?</p>
-                <input type="radio" name="heardus" value="Billboard"><br>
-                <input type="radio" name="heardus" label="Radio Advertisment"><br>
-                <input type="radio" name="heardus" label="Internet Advertisment"><br>
-                <input type="radio" name="heardus" label="other">
-
-
-
-
+                <label for="Billboard">Billboard</label>
+                <input type="radio" name="heardus" id="Billboard"><br>
+                <label for="Radio Advertisment">Radio Advertisment</label>
+                <input type="radio" name="heardus" id="Radio Advertisment"><br>
+                <label for="Internet_Advertisment">Internet Advertisment</label>
+                <input type="radio" name="heardus" id="Internet_Advertisment"><br>
+                <label for="other">If Other</label>
+                <input type="radio" name="heardus" id="other"><br>
+                <textarea name="heardother"></textarea><br>
+                    <p>What Browser are you using ?</p><br>
+                <select name="browsertype">
+                    <option value="chrome">Google Chrome</option>
+                    <option value="Safari">Safari</option>
+                    <option value="bad">Internet Explorer</option>
+                    <option value="firefox">Mozilla FireFox</option>
+                    <option value="opera">Opera Browser</option>
+                </select><br>
+                <button type="submit">Register</button>
             </main>
+            </form>
 
     </body>
 </html>
