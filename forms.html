@@ -3,22 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
-        <script>
-            "use strict"
-                if (){
+        <style>
 
-                }
+            body {
+                font-family: "Futura PT";
+                background-color: azure;
+                text-align: center;
+            }
+            
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </script>
+
+                    .border1 {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }
+        
+                    .border2 {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        transform: rotate(90deg);
+                    }
+        
+                    .border3 {
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0px;
+                        transform: rotate(180deg);
+        
+                    }
+                    .border4 {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        transform: rotate(270deg);
+                    }
+
+        </style>
     </head>
         <body>
             <h1>Register with Us</h1>
@@ -41,8 +63,8 @@
                 <input type="radio" name="heardus" id="Internet_Advertisment"><br>
                 <label for="other">If Other</label>
                 <input type="radio" name="heardus" id="other"><br>
-                <textarea name="heardother"></textarea><br>
-                    <p>What Browser are you using ?</p><br>
+                <textarea name="heardother" id="txtarea"></textarea><br>
+                    <p>What Browser are you using ?</p>
                 <select name="browsertype">
                     <option value="chrome">Google Chrome</option>
                     <option value="Safari">Safari</option>
@@ -50,7 +72,13 @@
                     <option value="firefox">Mozilla FireFox</option>
                     <option value="opera">Opera Browser</option>
                 </select><br>
+
                 <button type="submit">Register</button>
+
+                <img class="border1" src="corner.png" height=180px>
+                <img class="border2" src="corner.png" height=180px>
+                <img class="border3" src="corner.png" height=180px>
+                <img class="border4" src="corner.png" height=180px>
             </main>
             </form>
 
