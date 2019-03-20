@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            font-family: "Kokonor";
+            background-color: azure;
+            text-align: center;
+        }
+
+
+
+        .border1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .border2 {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            transform: rotate(90deg);
+        }
+
+        .border3 {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            transform: rotate(180deg);
+
+        }
+        .border4 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transform: rotate(270deg);
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Sam's Legit Properties</h1>
+        <p>Type of property your looking for?</p>
+            <select name="property">
+                <option value="Apartment">Apartments</option>
+                <option value="Condo">Condos</option>
+                <option value="House">Houses</option>
+                <option value="Land">Land</option>
+            </select>
+
+        <p>Square Footage</p>
+            <select name="browsertype">
+                <option value="1000">1000sqft</option>
+                <option value="2000">2000sqft</option>
+                <option value="3000=<">+3000sqft</option>
+            </select>
+
+        <h3>Price</h3>
+            <label for="min">Minimum Price</label>
+            <input id="min" type="text" name="minprice" placeholder="Ex: 250,000"><br>
+            <label for="max">Maximum Price</label>
+            <input id="max" type="text" name="maxprice" placeholder="Ex: 400,000"><br>
+
+        <h3>Area Code</h3>
+            <input id="zip" type="text" name="zip" placeholder="Ex: 78034"><br>
+
+        <label for="bed">Bedrooms</label>
+        <select id="bed" name="beds">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3=<">3</option>
+            <option value="4=<">+4</option>
+        </select><br>
+
+        <label for="bath">Bathrooms</label>
+        <select id="bath" name="baths">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3=<">3</option>
+            <option value="4=<">+4</option>
+        </select><br>
+
+        <button type="submit">Search</button>
+
+
+
+    </main>
+
+    <img class="border1" src="corner.png" height=180px>
+    <img class="border2" src="corner.png" height=180px>
+    <img class="border3" src="corner.png" height=180px>
+    <img class="border4" src="corner.png" height=180px>
+
+</body>
+</html>

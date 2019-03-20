@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cvv,.st {
+            width: 2%;
+        }
+        body {
+            font-family: "Futura PT";
+            background-color: azure;
+            text-align: center;
+        }
+
+
+
+        .border1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .border2 {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            transform: rotate(90deg);
+        }
+
+        .border3 {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            transform: rotate(180deg);
+
+        }
+        .border4 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transform: rotate(270deg);
+        }
+
+    </style>
+</head>
+<body>
+<form method="POST" action="https://www.elformo.com/forms/414ac550-0cb1-4ee4-a3fe-e00a1ac0dcd3">
+    <h2>Checkout</h2><br>
+    <h3>Card Information</h3>
+        <label for="card">Card Number</label>
+            <input type="text" id="card" name="card_number" placeholder="1234 5678 1234 5678" required><br>
+
+        <label for="exp">Experation Date</label>
+            <select id="exp" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+            <select required>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+            </select><br>
+
+            <label for="cvv">CVV Number</label>
+            <input class="cvv" id="cvv" name="cvv" type="password" placeholder="123" required>
+
+            <h3>Billing Info</h3>
+                <input name="address" placeholder="Billing Address" required><br>
+                <input name="apt" placeholder="Apartment Number"><br>
+                <input name="zip" placeholder="Postal Code" required><br>
+                <input class="st" name="state" placeholder="State" required><br>
+                <input name="city" placeholder="City" required><br>
+
+            <input name="keep" type="checkbox" checked>Keep existing Info<br>
+
+            <button type="submit">Buy Now</button>
+</form>
+<img class="border1" src="corner.png" height=180px>
+<img class="border2" src="corner.png" height=180px>
+<img class="border3" src="corner.png" height=180px>
+<img class="border4" src="corner.png" height=180px>
+
+</body>
+</html>
