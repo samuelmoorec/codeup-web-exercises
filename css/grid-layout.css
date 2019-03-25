@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+.row {
+    width:100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+.column {
+    float: left;
+
+}
+.column.one-third {
+    width: 33.33%;
+
+}
+.column.one-half {
+    width: 50%;
+
+}
+.column.one-forth {
+    width: 25%;
+
+}
+.column.one-sixth {
+    width: 16.66%;
+
+}
+.column.one-eighth {
+    width: 12.5%;
+
+}
