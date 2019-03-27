@@ -5,30 +5,110 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script rel="stylesheet" href="css/custom.css"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <!--<nav class="container-fluid">-->
-        <div class="navbar bg-light navbar-light navbar-expand-sm">
-            <div class="navbar-brand">
-                <img src="img/pizzaicon.png">
-            </div>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pizza World</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Order Here</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Menu</a>
-                </li>
-            </ul>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Stores Near You!</button>
-            </form>
+    <nav class="navbar navbar-light bg-light justify-content-start">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Pizza World</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Order Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+            <button class="btn btn-outline-success  my-sm-0" type="submit">Stores Near You</button>
+        </form>
         </div>
-    <!--</nav>-->
+        <a class="" href="#">Sign-In</a>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="pizzaimg">Welcome to Pizza World</h1>
+    </div>
+    <h2>Build your own PIZZA</h2>
+    <div class="cardtabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Size & Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cheese & Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Toppings</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="card m-5">
+        <div class="card-header card"><h4>Choose Size and Crust</h4></div>
+        <div class="card-body">
+            <br>
+                <div class="card" style="width: 100%;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light">Hand Tossed</li>
+                        <li class="list-group-item">Garlic Seasoned Crust with a Rich, Buttery Taste</li>
+
+                        <li class="list-group-item">
+                            <input type="radio" name="pq1" id="pz1" class="list-group-item d-inline-flex"> Small 10"</input>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="radio" name="pq1" id="pz2" class="list-group-item d-inline-flex"> Medium 12"</input>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class=" list-group">
+                        <li class="list-group-item bg-light">Crispy Thin</li>
+                        <li class="list-group-item">Thin Enough for Optimum Crispy to Crunchy Ratio</li>
+
+                        <li class="list-group-item">
+                            <input type="radio" name="pq1" id="pz1" class="list-group-item d-inline-flex"> Medium 12"</input>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="radio" name="pq1" id="pz2" class="list-group-item text-center d-inline-flex"> Large 14"</input>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <div class="card-footer text-right">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <div class="card m-5">
+        <div class="card-header card"><h4>Choose Cheese and Sauce</h4></div>
+        <div class="card-body">
+
+            <div class="card" style="width: 100%;">
+                <div class="card-header">Cheese</div>
+
+                <h4 class="m-sm-2">How Much?</h4>
+                <div class="card m-sm-2">
+                    <form>
+                        <div class="form-group justify-content-between">
+                                <label class="justify-content-between" for="formControlRange"></label>
+                            <p class=m-1">Little</p> <p class=" m-1">Alot</p>
+                            <input type="range" class="form-control-range" min="1" max="9" id="formControlRange">
+                        </div>
+                    </form>
+                </div>
+            </div>
+                <br>
+            <div class="card">
+                <div class="card-header">Sauce</div>
+            </div>
+        </div>
+            <div class="card-footer text-right">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+    </div>
+
 </body>
 </html>
