@@ -19,7 +19,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello()
+var helloMessage = sayHello("Samuel Moore");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -27,7 +28,9 @@ sayHello()
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-
+var myName = "Samuel Moore";
+helloMessage = sayHello(myName);
+console.log(helloMessage);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
@@ -49,7 +52,15 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-
+function isTwo(number) {
+    if(number === 2) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -61,6 +72,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(tip_percent, total){
+    var tip_amount = tip_percent * total;
+    return tip_amount;
+}
+ console.log(calculateTip(0.20, 54.37));
+
 
 /**
  * TODO:
@@ -68,6 +85,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+
+var tip = prompt("What percentage would you like to tip?");
+var bill = prompt("What is the total amount due?");
+alert("Your tip should be around $" + calculateTip(tip,bill));
+console.log(calculateTip(tip,bill));
+
 
 /**
  * TODO:
@@ -83,3 +107,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(originalprice,discountpercent) {
+    var discoutprice = originalprice - (originalprice * discountpercent);
+    return discoutprice
+}
+var cost = prompt("How much does the product cost?");
+var discount = prompt("How much is the percent discount?");
+alert("Your discounted price is $" + applyDiscount(cost,discount));
+console.log(applyDiscount(cost,discount));
+
