@@ -151,6 +151,38 @@ switch (color1) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckynumber,totalamount) {
+    totalamount = (parseInt(totalamount));
+    luckynumber = (parseInt(luckynumber));
+    var discount;
+    var discountedprice;
+    if (luckynumber === 1){
+        discount = .10;
+        discountedprice = (totalamount - (totalamount * discount));
+        return discountedprice.toFixed(2);
+    } else if (luckynumber === 2){
+        discount = .25;
+        discountedprice = (totalamount - (totalamount * discount));
+        return discountedprice.toFixed(2);
+    } else if (luckynumber === 3){
+        discount = .35;
+        discountedprice = (totalamount - (totalamount * discount));
+        return discountedprice.toFixed(2);
+    } else if (luckynumber === 4){
+        discount = .50;
+        discountedprice = (totalamount - (totalamount * discount));
+        return discountedprice.toFixed(2);
+    } else if (luckynumber === 5){
+        discount = 1;
+        discountedprice = (totalamount - (totalamount * discount));
+        return discountedprice.toFixed(2);
+    } else {
+        discountedprice = totalamount;
+        return discountedprice;
+    }
+}
+
+
 
 /**
  * TODO:
@@ -160,4 +192,8 @@ switch (color1) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var price = prompt("What is the total amount due?");
+var luckyNumber = Math.floor(Math.random() * 6);
+alert("Your lucky number is " + luckyNumber);
+alert("Your price before the discount was $" + price + ".");
+alert("Your discounted price is $" + calculateTotal(luckyNumber,price));
