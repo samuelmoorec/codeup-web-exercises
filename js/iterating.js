@@ -65,7 +65,7 @@ console.log(names.length);
             return array[last];
         }
 
-    console.log(names.length);
+
     first(names);
     second(names);
     last(names);
