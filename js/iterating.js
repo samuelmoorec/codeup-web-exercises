@@ -51,20 +51,18 @@ console.log(names.length);
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
     function first(array) {
-            console.log("The first name is " + array[0]);
-            return array[0];
-        }
-        function second(array) {
-            console.log("The second name is " + array[1]);
-            return array[1];
-        }
-        function last(array) {
-            var last = array.length;
-            last--;
-            console.log("The last name is " + array[last]);
-            return array[last];
-        }
-
+        console.log("The first element is " + array[0]);
+        return array[0];
+    }
+    function second(array) {
+        console.log("The second element is " + array[1]);
+        return array[1];
+    }
+    function last(array) {
+        var last = array.length - 1;
+        console.log("The last element is " + array[last]);
+        return array[last];
+    }
 
     first(names);
     second(names);

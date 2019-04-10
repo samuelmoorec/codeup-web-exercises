@@ -15,15 +15,15 @@ function showMultiplicationTable(number) {
         }
 
     }
-    // for (var i = 1, n = ""; i < 10; i++) {
-    //      n = n + "1";
-    //     console.log(i * n)
-    // }
+    for (var i = 1,n = "";i < 10;i++) {
+         n += "1";
+        console.log(i * n)
+    }
 
 
-//     for (var i = 100; i >= 5; i -= 5) {
-//         console.log(i);
-//     }
-//     for (var i= 1; i >= 10; i++){
-//
-// }
+    for (var i = 100; i >= 5; i -= 5) {
+        console.log(i);
+    }
+    for (var i= 1; i >= 10; i++){
+
+}

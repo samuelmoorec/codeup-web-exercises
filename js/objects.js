@@ -51,11 +51,19 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    function Savings(shopper,element) {
-        
-
-    }
-    console.log(shoppers[0].name);
+    function Savings(element) {
+         var customer = shoppers[element].name;
+         var originalCost = shoppers[element].amount;
+         var discountedPrice;
+         switch (true) {
+             case originalCost > 200:
+                 discountedPrice = originalCost - (originalCost * .12);
+                 console.log(customer + "'s original price was $" + originalCost.toFixed(2) + ", but with the discount the price is now $" + discountedPrice.toFixed(2));
+                 break;
+             default : console.log(customer + " did not qualify for the discount so they still owe $" + originalCost.toFixed(2))
+         }}
+    for (var i = 0; i < shoppers.length; i++) {
+        Savings(i);}
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -69,7 +77,32 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {title:'GreenEggs&Ham',
+            author: [
+                {first_name:'Doctor'},
+                {last_name:'Sues'}]},
+        {title:'CopperMountain',
+            author: [
+                {first_name:'Bob',last_name:'Stamper'}]},
+        {title:'TheCup',
+            author: [
+                {first_name:'Edward',last_name:'Buttle'}]},
+        {title:'TheOneWhoCried',
+            author: [
+                {first_name:'Sandy',last_name:'Cheeks'}]},
+        {title:'SandOnMyTowel',
+            author: [
+                {first_name:'Victoria',last_name:'Miller'}]}
+    ];
+    console.log(books[1].title);
+    console.log(books[1].author[1]);
+    console.log(books[1].author.last_name);
 
+    for (var i = 0; i < books.length; i++) {
+        console.log(books[i].author);
+        console.log(books[i].author.first_name + " " + books[i].author.last_name);
+    }
     /**
      * TODO:
      * Loop through the books array and output the following information about
