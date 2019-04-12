@@ -78,31 +78,36 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      * > console.log(books[0].author.lastName) // "Adams"
      */
     var books = [
-        {title:'GreenEggs&Ham',
-            author: [
-                {first_name:'Doctor'},
-                {last_name:'Sues'}]},
-        {title:'CopperMountain',
-            author: [
-                {first_name:'Bob',last_name:'Stamper'}]},
-        {title:'TheCup',
-            author: [
-                {first_name:'Edward',last_name:'Buttle'}]},
-        {title:'TheOneWhoCried',
-            author: [
-                {first_name:'Sandy',last_name:'Cheeks'}]},
-        {title:'SandOnMyTowel',
-            author: [
-                {first_name:'Victoria',last_name:'Miller'}]}
-    ];
-    console.log(books[1].title);
-    console.log(books[1].author[1]);
-    console.log(books[1].author.last_name);
+        {title:'GreenEggs & Ham',
+            author : {
+                        first_name:'Doctor',
+                        last_name:'Sues'}},
+        {title:'Copper Mountain',
+            author: {
+                        first_name:'Bob',
+                        last_name:'Stamper'}},
+        {title:'The Cup',
+            author: {
+                        first_name:'Edward',
+                        last_name:'Buttle'}},
+        {title:'The One Who Cried',
+            author: {
+                        first_name:'Sandy',
+                        last_name:'Cheeks'}},
+        {title:'Sand on my Towel',
+            author: {
+                        first_name:'Victoria',
+                        last_name:'Miller'}}];
 
-    for (var i = 0; i < books.length; i++) {
-        console.log(books[i].author);
-        console.log(books[i].author.first_name + " " + books[i].author.last_name);
-    }
+
+    //
+    // console.log(books[1].title);
+    // console.log(books[1].author[1]);
+    // console.log(books[1].author.last_name);
+
+
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -127,7 +132,12 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      *      ---
      *      ...
      */
-
+    for (var i = 0; i < books.length; i++) {
+        console.log("<-------------------------------->");
+        console.log("Book # " + (i + 1));
+        console.log("Title of book :" + books[i].title);
+        console.log("Author of the book :" + books[i].author.first_name + " " + books[i].author.last_name);
+    }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -138,5 +148,7 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+    function createbook(title,author) {
+        
+    }
 })();
