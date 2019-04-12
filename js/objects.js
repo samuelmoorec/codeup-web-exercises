@@ -79,22 +79,30 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      */
     var books = [
         {title:'GreenEggs & Ham',
+            genre: ["fiction","si-fi"],
             author : {
                         first_name:'Doctor',
                         last_name:'Sues'}},
         {title:'Copper Mountain',
+            genre: ["fiction","childrenBook"],
             author: {
                         first_name:'Bob',
                         last_name:'Stamper'}},
         {title:'The Cup',
+            genre: ["non-fiction","childrenBook"],
+
             author: {
                         first_name:'Edward',
                         last_name:'Buttle'}},
         {title:'The One Who Cried',
+            genre: ["fiction","childrenBook"],
+
             author: {
                         first_name:'Sandy',
                         last_name:'Cheeks'}},
         {title:'Sand on my Towel',
+            genre: ["fiction","childrenBook"],
+
             author: {
                         first_name:'Victoria',
                         last_name:'Miller'}}];
@@ -149,6 +157,6 @@ console.log("The persons name is " + person.first_name + " " + person.last_name 
      *   `showBookInfo` function.
      */
     function createbook(title,author) {
-        
+
     }
 })();
