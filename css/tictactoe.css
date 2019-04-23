@@ -1,0 +1,18 @@
+.box{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0;
+    text-align: center;
+    line-height: 100px;
+
+}
+.bigbox{
+
+    width: 312px;
+    height: 312px;
+    padding: 0;
+    margin: auto;
+    margin-top: 20%;
+}
