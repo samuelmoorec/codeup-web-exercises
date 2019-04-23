@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="js/keys.js"></script>
+</head>
+<body>
+<form>
+    <button type="button" id="search-btn">Search</button>
+    <input type="text" id="search" value="" placeholder="Search">
+</form>
+<div id='map' style='width: 1000px; height: 600px; margin: auto;'></div>
+
+<script>
+
+
+    var searchtext = document.getElementById("search").valueOf();
+    var searchbttn = document.getElementById("search-btn");
+
+
+            geocode(searchtext , mapboxkey).then(function(result) {
+                console.log(result);
+                map.setCenter(result);
+                map.setZoom(20);
+                map.setStyles('mapbox://styles/mapbox/satellite-streets-v9')
+
+            });
+
+
+    mapboxgl.accessToken = mapboxkey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v9'
+
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

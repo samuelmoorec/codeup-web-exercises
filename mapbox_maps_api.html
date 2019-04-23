@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapBoxes</title>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<div id='map' style='width: 1200px; height: 600px;'></div>
+<script>
+    mapboxgl.accessToken = mapboxkey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v9'
+    });
+
+    geocode("18720 Stone Oak Pkwy #154, San Antonio, TX 78258", mapboxkey).then(function(result) {
+        map.setZoom(19);
+        map.setCenter(result);});
+    var Zushimarker = new mapboxgl.Marker()
+        .setLngLat([-98.491159, 29.610024])
+        .addTo(map);
+    var ZushiPopup = new mapboxgl.Popup()
+        .setHTML("<p><strong>Sushi Zushi</strong><br><strong>Address:</strong> 18720 Stone Oak Pkwy #154, San Antonio, TX 78258<br><strong>Telephone:</strong> (210) 545-6100<br><strong>Menu:</strong> sushizushi.com</p>");
+    Zushimarker.setPopup(ZushiPopup);
+
+
+
+    geocode("7310 Jones Maltsberger Rd, San Antonio, TX 78209", mapboxkey).then(function(result) {
+        map.setZoom(19);
+        map.setCenter(result);
+        console.log(result)});
+    var hoofmarker = new mapboxgl.Marker()
+        .setLngLat([-98.47943, 29.497735])
+        .addTo(map);
+    var hoofPopup = new mapboxgl.Popup()
+        .setHTML("<p><strong>Quarry Hofbrau & Beer Garden</strong><br><strong>Address:</strong> 7310 Jones Maltsberger Rd, San Antonio, TX 78209<br><strong>Telephone:</strong> (210) 290-8066<br><strong>Menu:</strong> hosted.where2getit.com</p>");
+    hoofmarker.setPopup(hoofPopup);
+
+
+
+    geocode("5836 De Zavala Rd, San Antonio, TX 78249", mapboxkey).then(function(result) {
+        map.setZoom(19);
+        map.setCenter(result);
+        console.log(result)});
+    var culvmarker = new mapboxgl.Marker()
+        .setLngLat([-98.598799, 29.562654])
+        .addTo(map);
+    var culvPopup = new mapboxgl.Popup()
+        .setHTML("<p><strong>Culver's</strong><br><strong>Address:</strong> 5836 De Zavala Rd, San Antonio, TX 78249<br><strong>Telephone:</strong> (210) 558-9797<br><strong>Menu:</strong> quarryhofbrau.com</p>");
+    culvmarker.setPopup(culvPopup);
+
+
+
+
+</script>
+
+
+</body>
+</html>
