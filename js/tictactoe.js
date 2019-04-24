@@ -10,13 +10,18 @@ var botright = document.getElementById("botright");
 
 var round = 1;
 
-blocks=[
+var blocks=[
     topleft,topmid,topright,midleft,midmid,midright,botleft,botmid,botright
 ];
+var usersblocks = [];
+var AIsblocks = [];
 
 function AIsTurn() {
-
-
+    var AisBlockChoice = Math.floor(Math.random() * blocks.length);
+    console.log(blocks[AisBlockChoice]);
+    blocks[AisBlockChoice].innerHTML = "O";
+    var tempblock = blocks.splice(AisBlockChoice,1);
+    AIsblocks.unshift(tempblock);
 }
 
 function isEven(num) {
@@ -26,7 +31,10 @@ function isEven(num) {
 function turn(block) {
     if (block.innerHTML === "") {
         block.innerHTML = "X";
-        a
+        var tempblock = blocks.splice(blocks.indexOf(block),1);
+        usersblocks.unshift(tempblock);
+        console.log(usersblocks);
+        AIsTurn()
     }else{
         alert("Pick another square")
     }
