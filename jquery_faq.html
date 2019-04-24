@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .invisible{
+        color: transparent;
+    }
+    .highlighted{
+        background-color: yellow;
+    }
+
+
+
+</style>
+    <h1>Facts you probably didnt know about National Parks.</h1>
+    <button id="btn" type="button">See Facts</button>
+        <dl>
+            <dt>Fact #1</dt>
+            <dd class="invisible">The National Park Service protects over 84 million acres of wild landscapes and historic sites.</dd>
+            <dt>Fact #2</dt>
+            <dd class="invisible">The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
+            <dt>Fact #3</dt>
+            <dd class="invisible">When a giant sequoia tree fell and blocked a road in Sequoia National Park in California in 1937, the National Park Service simply created a tunnel through the 275-foot by 21-foot tree.</dd>
+            <dt>Fact #4</dt>
+            <dd class="invisible">The national parks are home and habitat to more than 400 endangered or threatened plant and animal species.</dd>
+            <dt>Fact #5</dt>
+            <dd class="invisible">You can visit two parks in a day if you visit Yellowstone National Park and Grand Teton National Park. They are just 10 miles apart in northern Wyoming.</dd>
+            <dt>Fact #6</dt>
+            <dd class="invisible">Alaska is home to one of the least visited national parks: Kobuk Valley National Park receives just 3,000 visitors per year.</dd>
+            <dt>Fact #7</dt>
+            <dd class="invisible">At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.</dd>
+            <dt>Fact #8</dt>
+            <dd class="invisible">Located 70 miles from Key West in the Gulf of Mexico, Dry Tortugas National Park is a collection of seven tiny islands that can be reached only by boat or plane, making it the country's most remote national park.</dd>
+            <dt>Fact #9</dt>
+            <dd class="invisible">There are 25 active glaciers and more than 700 lakes of various sizes inside Glacier National Park.</dd>
+            <dt>Fact #10</dt>
+            <dd class="invisible">Pinnacles National Park in California was designated on January 10, 2013 and is America's newest national park.</dd>
+        </dl>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $("#btn").click(function (e) {
+        $("dd").toggleClass("invisible");
+        if($("dd").hasClass("invisible")){
+            $(this).html("See Facts")
+        }else{
+            $(this).html("Dont see Facts")
+        }});
+    $("dt").click(function (e) {
+        if($("dd").hasClass("invisible")){
+            console.log("lol")
+        }else {
+            $("dd").toggleClass("highlight")
+            }})
+</script>
+</body>
+</html>
