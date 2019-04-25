@@ -8,15 +8,27 @@
 
 <style>
     .invisible{
-        color: transparent;
+        display: none;
     }
     .highlighted{
         background-color: yellow;
     }
-
-
-
+#newsletter{
+    display: none;
+}
+    #bigbend,#dino,#coverup{
+        display: none;
+    }
 </style>
+
+
+<div  id="newsletter">
+    <h1>Would you like to sign up and register for our newsletter?</h1>
+    <button type="button">Sign-Up</button>
+    <button id="noreg" type="button">X</button>
+</div>
+
+
     <h1>Facts you probably didnt know about National Parks.</h1>
     <button id="btn" type="button">See Facts</button>
         <dl>
@@ -41,7 +53,42 @@
             <dt>Fact #10</dt>
             <dd class="invisible">Pinnacles National Park in California was designated on January 10, 2013 and is America's newest national park.</dd>
         </dl>
+<button type="button" id="btnlast">Highlight last fact</button>
+
+<h3 id="BigBendNationalPark">National Parks</h3>
+<ul id="bigbend">
+    <li>Is in the USA.</li>
+    <li>This park spends most of the year in Texas.</li>
+    <li>Have 4 seasons.</li>
+    <li>Has trees other than just cedar.</li>
+</ul>
+<h3 id="dinohead">Dinosaur Valley State Park</h3>
+<ul id="dino">
+    <li>Resides in Texas.</li>
+    <li>Dinosaurs died here.</li>
+    <li>Park is in a valley.</li>
+    <li>Is a state park.</li>
+</ul>
+<h3 id="coveruphead">Guadalupe Mountains National Park</h3>
+<ul id="coverup">
+    <li>Has mountains.</li>
+    <li>Jk not really.</li>
+    <li>The park is goverment property.</li>
+    <li>What are they hiding?.</li>
+</ul>
+
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+
 <script>
     $("#btn").click(function (e) {
         $("dd").toggleClass("invisible");
@@ -55,7 +102,37 @@
             console.log("lol")
         }else {
             $("dd").toggleClass("highlight")
-            }})
+            }});
+$("#btnlast").click(function (e) {
+    $("li:last-child").css('background-color', '#FF0');
+
+});
+
+$("#noreg").click(function (e) {
+    $("#newsletter").hide();
+});
+
+$("#BigBendNationalPark").click(function (e) {
+    $("#bigbend").fadeToggle(500);
+});
+
+$("#dinohead").click(function (e) {
+        $("#dino").fadeToggle(500);
+});
+
+$("#coveruphead").click(function (e) {
+        $("#coverup").fadeToggle(500);
+});
+
+$(document).ready(function (e) {
+    setTimeout(function() {
+            $("#newsletter").fadeIn(1000)
+        }, 8000);
+})
+
+
+
+
 </script>
 </body>
 </html>
