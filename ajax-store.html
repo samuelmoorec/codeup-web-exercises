@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<script src="js/jquery-2.2.4.js"></script>
+<body>
+<h1>My Tool Store</h1>
+<style>
+    td{
+        background-color: white;
+
+        text-align: center;
+        /*border: 1px solid black;*/
+    }
+    th{
+        width: 200px    ;
+        background-color: white;
+
+        margin: 5px;
+        /*border: 1px solid black;*/
+    }
+    table{
+        background-color: #3B94D9;
+    }
+    a{
+        text-decoration: none;
+        color: darkgray;
+    }
+.input-text{
+    border: none;
+    width: 96%;
+    height: 100%;
+}
+    .input-text:focus{
+        box-shadow: none;
+    }
+
+</style>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+
+
+<button type="button" id="btn">Refresh Products</button>
+
+<h2>Add product</h2>
+
+<table id="add-products">
+    <thead>
+    <tr>
+        <th class="input"><input class="input-text" id="title_input" type="text" placeholder="Title"></th>
+        <th class="input"><input class="input-text" id="title_input" type="text" placeholder="Quantity"></th>
+        <th class="input"><input class="input-text" id="title_input" type="text" placeholder="Price"></th>
+        <th class="input"><input class="input-text" id="title_input" type="text" placeholder="Categories"></th>
+    </tr>
+    </thead>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+    $.ajax("data/inventory.json");
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    $("#btn").click(function () {
+    $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+        var tooltable = "";
+            for(var i = 0; i < data.length; i++ ){
+                var catigory = [];
+                for (var n = 0; n < data[i].categories.length; n++){
+                   catigory.push(data[i].categories[n].charAt(0).toUpperCase() + data[i].categories[n].slice(1) );
+                }
+                tooltable += ("<tr><td><a href='https://www.amazon.com/s?k="+ data[i].title  + "&ref=nb_sb_noss_2' target=\"myIframe\">" + data[i].title +"</a></td><td>" + data[i].quantity +"</td><td>$" + data[i].price  +"</td><td>" + catigory.join(", ") +"</td></tr>");
+            }
+        $("#insertProducts").html(tooltable);
+    });
+});
+})();
+
+
+</script>
+
+</body>
+</html>

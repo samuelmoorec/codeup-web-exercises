@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Site</title>
+    <script src="js/jquery-2.2.4.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<style>
+    #posts{
+        width: 50%;
+        margin: auto;
+    }
+.title{
+    color: white;
+    float: left;
+    padding: 1% 5%;
+    margin: 0;
+    overflow:hidden;
+}
+    .date{
+        float: right;
+        font-size: 12px;
+        padding: 1% 5%;
+        margin: 0;
+        overflow:hidden;
+    }
+    .content{
+        clear: both;
+        padding: 2% 5% 0 5%;
+    }
+    .categories{
+        float: left;
+        padding: 0 6% 0 5%;
+        margin: 0 4% 0 4%;
+        background-color: #3B94D9;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .post-heading{
+        padding: 0;
+        margin: 4% 4% 0 4%;
+        background-color: #3B94D9;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+    }
+    .post-content{
+        padding: 0;
+        margin: 0 4% 0 4%;
+        background-color: #95d3f9;
+        border-bottom-right-radius: 10px;
+        overflow: hidden;
+}
+#refresh-btn{
+    margin: 2%;
+    clear: both;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+</style>
+<body>
+<div id="posts">
+
+</div>
+<button type="button" id="refresh-btn">Refresh</button>
+</body>
+<script src="js/ajax-blog.js"></script>
+</html>
