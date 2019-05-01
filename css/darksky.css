@@ -1,0 +1,13 @@
+.windarrow{
+    width: 16px;
+    height: auto;
+    position: relative;
+    top: 2px;
+}
+.degree{
+    width: 60px;
+    height: auto;
+}
+.feelslike{
+    font-size: 80%;
+}
