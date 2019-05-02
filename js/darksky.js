@@ -22,99 +22,127 @@ function City(Name) {
 // https://api.darksky.net/forecast/[key]/[latitude],[longitude]
 
 $.get(corsUrl + darkSkyUrl  + darkSkyKey + City("San Antonio")).done(function(data) {
+    // var day = data.daily.data;
+    // var temp_html = "";
+    // var dayIcon = data.daily.data[i].icon;
+    // var currentTempMin = data.daily.data[i].temperatureLow;
+    // var currentTempMax = data.daily.data[i].temperatureHigh;
+    // var currentPrecipProbability = data.daily.data[i].precipProbability;
+    // var currentHumidity = data.daily.data[i].humidity;
+    // var currentWindSpeed = data.daily.data[i].windSpeed;
+    // var currentWindDirection = data.daily.data[i].windBearing;
+    // var currentAppTemp = data.daily.data[i].apparentTemperature;
+    // var currenttime = data.currently.time;
+    // var currentSummary = data.daily.data[i].summary;
+    // console.log(data);
+
+
     var temp_html = "";
-    var currentTemp = data.currently.temperature;
-    var currentPrecipProbability = data.currently.precipProbability;
-    var currentHumidity = data.currently.humidity;
-    var currentWindSpeed = data.currently.windSpeed;
-    var currentWindDirection = data.currently.windBearing;
-    var currentAppTemp = data.currently.apparentTemperature;
-    // var current = data.currently.;
-    var currenttime = data.currently.time;
-    var currentSummary = data.currently.summary;
-    console.log(data);
-function fullTime(data) {
-    var dateObject = new Date(data * 1000);
-    data = (dateObject.toString());
-    return "<p class='time'>" + data + "</p>";
+
+    for (var i = 0; i < 7; i++) {
+        temp_html += "<div class='cards'>";
+        temp_html += shortHandDate(i);
+        temp_html += todaysSummary(data.daily.data[ i ].summary);
+        temp_html += daysIcon(data.daily.data[i].icon);
+        temp_html += tempLow(data.daily.data[i].temperatureLow);
+        temp_html += tempHigh(data.daily.data[i].temperatureHigh);
+        temp_html += chanceOfRain(data.daily.data[i].precipProbability);
+        temp_html += humidityPercentage(data.daily.data[i].humidity);
+        temp_html += currentWind(data.daily.data[i].windSpeed, data.daily.data[i].windBearing);
+        temp_html += "</div>"
+    }
+    $("#main").html(temp_html);
+
+
+});
+
+
+
+function shortHandDate(daysToAdd) {
+    var date = new Date();
+    date = ((date.getMonth() + 1).toString()) + "/" + ((date.getDay() + daysToAdd).toString())  + "/" + ((date.getFullYear()).toString());
+    return "<p class='date'>" + date + "</p>"
 }
+
     function chanceOfRain(data){
-        data = data * 100;
-       return "<p class='rainProbability'>Chance of Rain :" + data + "%</p>";
+        data = (data * 100);
+       return "<div class='rainChance'><p class='rainChanceTitle'>Chance of Rain</p><p class='rainChancePercent'>" + data + "%</p></div>";
     }
     function todaysSummary(data){
-       return "<p class='current'> Todays current weather forcast is " + data + "</p><img alt='" + data + "' src='icon/SVG/" + data + ".svg'>";
+       return "<div class='summaryDiv'><p class='daySummaryTitle'>Forecast</p><p class='daySummaryData'>" + data + "</p></div>";
     }
-    function temp(data){
-        return "<p class='temp'>" + data + "°F <span class='feelslike'>(feels like " + currentAppTemp + ")</span></p>";
+    function daysIcon(data) {
+        return "<img class='summaryimg' alt='" + data + "' src='icon/SVG/" + data + ".svg'>"
+    }
+    function tempLow(data){
+        return "<div class='tempDiv'><p class='tempTitle'>Temp Low</p><p class='tempValue'>" + data + "</p></div>";
+    }
+    function tempHigh(data){
+        return "<div class='tempDiv'><p class='tempTitleHigh'>Temp High</p><p class='tempValue'>" + data + "</p></div>";
     }
     function feelsLike(data) {
         return "<p class='temp'>Feels like " + data + "°F</p>";
 
 }
-    function humidityPercentag(data){
+    function humidityPercentage(data){
+    console.log(data);
         data = data * 100;
-        return "<p class='humidity'>Current Humidity :" + data + "%</p>";
+        return "<div class='humidity'><p class='humidityTitle'>Humidity</p><p class='humidityPercent'>" + data + "%</p></div>";
     }
     function currentWind(dataSpeed,dataDirection){
-    var windDirection = "";
-    console.log(dataDirection);
-    if (350 < dataDirection || dataDirection < 10){
+    var windDirection;
+    if (350 < dataDirection || dataDirection <= 10){
         windDirection = "South"
-    }else if (11 < dataDirection && dataDirection < 39){
+    }else if (11 <= dataDirection && dataDirection <= 39){
         windDirection = "SSW"
-    }else if (40 < dataDirection && dataDirection < 50){
+    }else if (40 <= dataDirection && dataDirection <= 50){
         windDirection = "SW"
-    }else if (51 < dataDirection && dataDirection < 79){
+    }else if (51 <= dataDirection && dataDirection <= 79){
         windDirection = "WSW"
-    }else if (80 < dataDirection && dataDirection < 100){
-        windDirection = "West"
-    }else if (101 < dataDirection && dataDirection < 129){
-        windDirection = "WNW"
-    }else if (130 < dataDirection && dataDirection < 140){
+    }else if (80 <= dataDirection && dataDirection <= 100){
+        windDirection = "West";
+    }else if (101 <= dataDirection && dataDirection <= 129){
+        windDirection = "WNW";
+    }else if (130 <= dataDirection && dataDirection <= 140){
         windDirection = "NW"
-    }else if (141 < dataDirection && dataDirection < 169){
+    }else if (141 <= dataDirection && dataDirection <= 169){
         windDirection = "NNW"
-    }else if (170 < dataDirection && dataDirection < 190){
+    }else if (170 <= dataDirection && dataDirection <= 190){
         windDirection = "North"
-    }else if (191 < dataDirection && dataDirection < 219){
+    }else if (191 <= dataDirection && dataDirection <= 219){
         windDirection = "NNE"
-    }else if (220 < dataDirection && dataDirection < 230){
+    }else if (220 <= dataDirection && dataDirection <= 230){
         windDirection = "NE"
-    }else if (231 < dataDirection && dataDirection < 259){
+    }else if (231 <= dataDirection && dataDirection <= 259){
         windDirection = "ENE"
-    }else if (260 < dataDirection && dataDirection < 280){
+    }else if (260 <= dataDirection && dataDirection <= 280){
         windDirection = "East"
-    }else if (281 < dataDirection && dataDirection < 309){
+    }else if (281 <= dataDirection && dataDirection <= 309){
         windDirection = "ESE"
-    }else if (310 < dataDirection && dataDirection < 320){
+    }else if (310 <= dataDirection && dataDirection <= 320){
         windDirection = "SE"
-    }else if (321 < dataDirection && dataDirection < 349){
+    }else if (321 <= dataDirection && dataDirection <= 349){
         windDirection = "SSE"
     }
-        return "<p class='wind'>Wind Speed :" + dataSpeed + "<sup>m/s</sup>  " + windDirection + " <img class='windarrow' style='transform: rotate(" + (dataDirection - 180) + "deg)' src='img/arrow_icon.png'></p>";
+        return "<div class='windDiv'><div><p class='windTitle'>Wind Speed</p><p class='wind'>" + dataSpeed + "<sup>m/s</sup> " + windDirection + " </p></div><img class='windarrow' style='transform:rotate(" + (dataDirection - 180) + "deg)' src='img/arrow_icon.png'></div>"
     }
-
-
-// for (var i = 0; i < data.length; i++){
-    temp_html += fullTime(currenttime);
-    temp_html += todaysSummary(currentSummary);
-    temp_html += temp(currentTemp);
-    // temp_html +=
-    temp_html += chanceOfRain(currentPrecipProbability);
-    temp_html += humidityPercentag(currentHumidity);
-    temp_html += currentWind(currentWindSpeed,currentWindDirection);
-    temp_html += "<p class=''>" + + "</p>";
-    temp_html += "<p class=''>" + + "</p>";
-
-
-
-
-
-
-
-// }
-    $("#main").html(temp_html);
-});
+    //
+    //
+    // var temp_html = "";
+    // for (var i = 0; i < data.length; i++) {
+    //     temp_html += "<div>";
+    //     temp_html += shortHandDate(i);
+    //     temp_html += todaysSummary(data.daily.data[i].summary);
+    //     temp_html += daysIcon(data.daily.data[i].icon);
+    //     temp_html += tempLow(data.daily.data[i].temperatureLow);
+    //     temp_html += tempHigh(data.daily.data[i].temperatureHigh);
+    //     temp_html += chanceOfRain(data.daily.data[i].precipProbability);
+    //     temp_html += humidityPercentage(data.daily.data[i].humidity);
+    //     temp_html += currentWind(data.daily.data[i].windSpeed, data.daily.data[i].windBearing);
+    //     temp_html += "</div>"
+    // }
+    // $("#main").html(temp_html);
+    //
+    //
 
 
