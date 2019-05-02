@@ -52,7 +52,7 @@ $.get(corsUrl + darkSkyUrl  + darkSkyKey + City("San Antonio")).done(function(da
         temp_html += "</div>"
     }
     $("#main").html(temp_html);
-
+    var cardH = $("#cards").css("height")
 
 });
 
@@ -60,7 +60,7 @@ $.get(corsUrl + darkSkyUrl  + darkSkyKey + City("San Antonio")).done(function(da
 
 function shortHandDate(daysToAdd) {
     var date = new Date();
-    date = ((date.getMonth() + 1).toString()) + "/" + ((date.getDay() + daysToAdd).toString())  + "/" + ((date.getFullYear()).toString());
+    date = ((date.getMonth() + 1).toString()) + "/" + ((date.getDay() -2  + daysToAdd).toString())  + "/" + ((date.getFullYear()).toString());
     return "<p class='date'>" + date + "</p>"
 }
 
