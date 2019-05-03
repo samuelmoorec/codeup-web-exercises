@@ -5,6 +5,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 var corsUrl = "https://cors-anywhere.herokuapp.com/";
 var darkSkyUrl = "https://api.darksky.net/forecast/";
 var darkSkyKey = darkskykey;
@@ -55,7 +68,6 @@ $.get(corsUrl + darkSkyUrl  + darkSkyKey + City("San Antonio")).done(function(da
     var cardH = $("#cards").css("height")
 
 });
-
 
 
 function shortHandDate(daysToAdd) {
@@ -126,23 +138,3 @@ function shortHandDate(daysToAdd) {
     }
         return "<div class='windDiv'><div><p class='windTitle'>Wind Speed</p><p class='wind'>" + dataSpeed + "<sup>m/s</sup> " + windDirection + " </p></div><img class='windarrow' style='transform:rotate(" + (dataDirection - 180) + "deg)' src='img/arrow_icon.png'></div>"
     }
-    //
-    //
-    // var temp_html = "";
-    // for (var i = 0; i < data.length; i++) {
-    //     temp_html += "<div>";
-    //     temp_html += shortHandDate(i);
-    //     temp_html += todaysSummary(data.daily.data[i].summary);
-    //     temp_html += daysIcon(data.daily.data[i].icon);
-    //     temp_html += tempLow(data.daily.data[i].temperatureLow);
-    //     temp_html += tempHigh(data.daily.data[i].temperatureHigh);
-    //     temp_html += chanceOfRain(data.daily.data[i].precipProbability);
-    //     temp_html += humidityPercentage(data.daily.data[i].humidity);
-    //     temp_html += currentWind(data.daily.data[i].windSpeed, data.daily.data[i].windBearing);
-    //     temp_html += "</div>"
-    // }
-    // $("#main").html(temp_html);
-    //
-    //
-
-

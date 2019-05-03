@@ -9,6 +9,9 @@
 #main{
 margin: auto;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
 }
 .cards{
     margin: 2px;
@@ -18,6 +21,13 @@ margin: auto;
     border: 3px solid #4e555b;
     padding: 10px;
     border-radius: 14px;
+    transition: 100s;
+    height: 100%;
+}
+.minimized{
+    height: 25px;
+    transition: 100s;
+    opacity: .5%;
 }
 .date{
 
