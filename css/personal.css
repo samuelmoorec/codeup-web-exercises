@@ -1,0 +1,19 @@
+nav{
+    position: sticky;
+    width: 100%;
+    background-color: #9fcdff;
+    margin: 0;
+    height: 100px;
+}
+.self_img{
+    width: 300px;
+}
+body{
+    background-color: #ABB0B8;
+    margin: 0;
+}
+.list_item{
+    height: 90%;
+    background-color: #53565A;
+    display: inline;
+}
